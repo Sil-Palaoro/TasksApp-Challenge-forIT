@@ -2,9 +2,9 @@
 
 "use client";
 import TaskForm from "./TaskForm";
-import Task from "./Task";
+import TaskItem from "./TaskItem";
 import EditTaskForm from "./EditTaskForm";
-import styles from "../../styles/TaskList.module.css";
+import styles from "@/styles/TaskList.module.css";
 import { AiFillEdit } from "react-icons/ai";
 import { BsFillTrash2Fill } from "react-icons/bs";
 import { RiRadioButtonFill } from "react-icons/ri";
@@ -29,7 +29,7 @@ function TaskList() {
     if (access_token) {
       // Configura una instancia de Axios con el token en la cabecera
       const axiosInstance = axios.create({
-        baseURL: "http://127.0.0.1:8000/",
+        baseURL: "/api/",
         headers: {
           Authorization: `Bearer ${access_token}`,
           'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ function TaskList() {
       
       //Trae las tareas desde la BD
       axiosInstance
-        .get("/tareas/")
+        .get("/tasks/")
         .then((response) => setTasks(response.data))
         .catch((error) => console.error(error));       
 
@@ -69,14 +69,14 @@ function TaskList() {
     const access_token = localStorage.getItem('access_token');
     if (access_token) {
         const axiosInstance = axios.create({
-            baseURL: "http://127.0.0.1:8000/",
+            baseURL: "/api/",
             headers: {
                 Authorization: `Bearer ${access_token}`,
             },
         });
 
         axiosInstance
-            .post(`/tareas/${id}/task_completed/`)
+            .post(`/tasks/${id}/task_completed/`)
             .then((response) => {
               // Actualizar la lista de tareas en el frontend después de recibir la respuesta del servidor
               const updatedTasks = tasks.map((task) =>
@@ -164,7 +164,7 @@ function TaskList() {
           <EditTaskForm editTask={editText} text={task} />
         ) : (
           
-          <Task
+          <TaskItem
             text={task}
             key={index}
             taskCompleted={taskCompleted}
@@ -180,28 +180,3 @@ function TaskList() {
 }
 
 export default TaskList;
-
-
-// export async function getStaticProps() {
-//   const apiUrl = 'http://localhost:8000'; // Accede a la variable de ambiente
-  
-
-//   try {
-//     const response = await axios.get(`${apiUrl}/tareas/`); // Usa la variable de ambiente en la URL
-//     const data = response.data;    
-
-//     return {
-//       props: {
-//         data,
-//       },
-//     };
-//   } catch (error) {
-//     console.error('Error:', error);
-//     return {
-//       props: {
-//         data: [],
-//         error: 'Error al cargar los datos',
-//       },
-//     };
-//   }
-// }

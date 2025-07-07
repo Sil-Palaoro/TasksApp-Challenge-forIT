@@ -1,7 +1,7 @@
 //Pagina de Tareas
 
-import TaskList from "../../../components/TaskList";
-import styles from '../../../../styles/Home.module.css';
+import TaskList from "@/components/TaskList";
+import styles from '@/styles/Home.module.css';
 
 
 export default function PagTareas() {

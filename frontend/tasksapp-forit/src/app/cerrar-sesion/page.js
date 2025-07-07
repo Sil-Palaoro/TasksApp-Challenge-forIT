@@ -1,5 +1,5 @@
 import LogOut from "@/app/components/LogOut";
-import styles from "../../../../styles/page.module.css";
+import styles from "@/styles/page.module.css";
 
 const CerrarSesion = () => {
   return (

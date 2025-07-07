@@ -1,7 +1,7 @@
 //Componente de la Barra de navegación
 "use client"
 import Link from 'next/link';
-import "../../styles/navbar.css";
+import "@/styles/navbar.css";
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 

@@ -1,7 +1,7 @@
 //Componente del formulario para armar cada tarea
 "use client"
 import {useEffect, useState}  from "react";
-import styles from '../../styles/TaskForm.module.css';
+import styles from '@/styles/TaskForm.module.css';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 
@@ -18,7 +18,7 @@ function TaskForm({ addTask, username }) {
     if (access_token) {
       // Configura una instancia de Axios con el token en la cabecera
       const axiosInstance = axios.create({
-        baseURL: "http://127.0.0.1:8000/",
+        baseURL: "/api/",
         headers: {
           Authorization: `Bearer ${access_token}`,
         },
@@ -26,7 +26,7 @@ function TaskForm({ addTask, username }) {
       
       //Trae las tareas anteriores desde la BD
       axiosInstance
-        .get("tareas/")
+        .get("tasks/")
         .then((response) => {
           setTasks({...tasks, ...response.data});
       })
@@ -48,7 +48,7 @@ function TaskForm({ addTask, username }) {
     const access_token = localStorage.getItem('access_token');
     if (access_token) {
       const axiosInstance = axios.create({
-        baseURL: "http://127.0.0.1:8000/",
+        baseURL: "/api/",
         headers: {
           Authorization: `Bearer ${access_token}`,
         },
@@ -59,7 +59,7 @@ function TaskForm({ addTask, username }) {
 
       //Agrega una nueva tarea en la BD con POST
       axiosInstance
-        .post('/tareas/', taskData)
+        .post('/tasks/', taskData)
         .then((response) => {          
           
           // Llama a la función addTask para agregar la tarea      

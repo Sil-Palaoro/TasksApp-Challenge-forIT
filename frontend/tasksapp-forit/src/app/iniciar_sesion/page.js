@@ -1,7 +1,7 @@
 /*Página de Login*/
 
 "use client";
-import styles from "../../../../styles/page.module.css";
+import styles from "@/styles/page.module.css";
 import { useState } from 'react';
 import axios from 'axios';
 
@@ -11,7 +11,7 @@ function Inicio_sesion() {
   const [password, setPassword] = useState("");
   
   // Endpoint para obtener el token JWT
-  const apiUrl = 'http://127.0.0.1:8000/token/'; 
+  const apiUrl = '/api/login'; 
 
   const handleIniciarSesion = async () => {
     try {

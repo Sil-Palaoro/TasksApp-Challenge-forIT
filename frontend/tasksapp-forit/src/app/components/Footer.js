@@ -2,12 +2,10 @@
 "use client"
 import { useState, useEffect } from 'react';
 import Atras from "./Atras.js";
-import styles from "../../styles/page.module.css";
-import { usePathname } from 'next/navigation';
+import styles from "@/styles/page.module.css";
 
 function Footer() {
   const [isClientFooter, setIsClientFooter] = useState(false)
-  const pathname = usePathname()
  
   useEffect(() => {
     setIsClientFooter(true)

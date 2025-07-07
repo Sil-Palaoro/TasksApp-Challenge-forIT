@@ -4,13 +4,13 @@ import React from "react";
 import { AiFillEdit } from "react-icons/ai";
 import { BsFillTrash2Fill } from "react-icons/bs";
 import { RiRadioButtonFill } from "react-icons/ri";
-import styles from "../../styles/Task.module.css";
+import styles from "@/styles/Task.module.css";
 import { useRouter } from 'next/navigation';
 import {useState, useEffect}  from "react";
 import axios from 'axios';
 
 
-function Task({ text, taskCompleted, delTask, editTask }) {  
+function TaskItem({ text, taskCompleted, delTask, editTask }) {  
   const [tasks, setTasks] = useState([]);
   const router = useRouter();
   
@@ -23,7 +23,7 @@ function Task({ text, taskCompleted, delTask, editTask }) {
 
       // Configura una instancia de Axios con el token en la cabecera
       const axiosInstance = axios.create({
-        baseURL: "http://127.0.0.1:8000/",
+        baseURL: "/api/",
         headers: {
           Authorization: `Bearer ${access_token}`,
         },
@@ -31,7 +31,7 @@ function Task({ text, taskCompleted, delTask, editTask }) {
 
       // Trae las tareas desde la BD
       axiosInstance
-        .get("tareas/")
+        .get("tasks/")
         .then((response) => setTasks(response.data))
         .catch((error) => console.error(error));
     } else {
@@ -45,7 +45,7 @@ function Task({ text, taskCompleted, delTask, editTask }) {
     const access_token = localStorage.getItem('access_token');
     if (access_token) {
       const axiosInstance = axios.create({
-        baseURL: "http://127.0.0.1:8000/",
+        baseURL: "/api/",
         headers: {
           Authorization: `Bearer ${access_token}`,
         },
@@ -53,7 +53,7 @@ function Task({ text, taskCompleted, delTask, editTask }) {
 
       //Elimina la tarea en la BD 
       axiosInstance
-        .delete(`/tareas/${text.id}/`)
+        .delete(`/tasks/${text.id}/`)
         .then((response) => {
           
           // Llama a la función delTask para eliminar la tarea
@@ -71,7 +71,7 @@ function Task({ text, taskCompleted, delTask, editTask }) {
     const access_token = localStorage.getItem('access_token');
     if (access_token) {
       const axiosInstance = axios.create({
-        baseURL: "http://127.0.0.1:8000/",
+        baseURL: "/api/",
         headers: {
           Authorization: `Bearer ${access_token}`,
         },
@@ -79,7 +79,7 @@ function Task({ text, taskCompleted, delTask, editTask }) {
 
       //Marca la tarea como completada o no en la BD con PATCH
       axiosInstance
-        .patch(`/tareas/${text.id}/`)
+        .patch(`/tasks/${text.id}/`)
         .then((response) => {
           
           // Llama a la función taskCompleted para marcar la tarea como completada o no
@@ -120,5 +120,5 @@ function Task({ text, taskCompleted, delTask, editTask }) {
       </div>
       );
 }
-export default Task;
+export default TaskItem;
 

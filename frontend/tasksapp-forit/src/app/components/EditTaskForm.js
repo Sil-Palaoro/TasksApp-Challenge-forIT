@@ -1,7 +1,7 @@
 //Componente Para editar y guardar cambios en la tarea
 "use client";
 import {useState, useEffect} from 'react';
-import styles from '../../styles/TaskForm.module.css';
+import styles from '@/styles/TaskForm.module.css';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 
@@ -19,7 +19,7 @@ function EditTaskForm({editTask, text}) {
 
       // Configura una instancia de Axios con el token en la cabecera
       const axiosInstance = axios.create({
-        baseURL: "http://127.0.0.1:8000/", //cambiar por apiURL
+        baseURL: "/api/", 
         headers: {
           Authorization: `Bearer ${access_token}`,
         },
@@ -27,7 +27,7 @@ function EditTaskForm({editTask, text}) {
 
       //Trae la tarea para editar desde la BD
       axiosInstance
-        .get(`/tareas/${text.id}/`)
+        .get(`/tasks/${text.id}/`)
         .then((response) => {
           setTitle(response.data.title);
           setDescription(response.data.description);
@@ -49,7 +49,7 @@ function EditTaskForm({editTask, text}) {
 
         // Configura una instancia de Axios con el token en la cabecera
         const axiosInstance = axios.create({
-          baseURL: "http://127.0.0.1:8000/",
+          baseURL: "/api/",
           headers: {
             Authorization: `Bearer ${access_token}`,
           },
@@ -57,7 +57,7 @@ function EditTaskForm({editTask, text}) {
 
         //Edita la tarea en la BD con PATCH
         axiosInstance
-          .patch(`/tareas/${text.id}/`, { title, description })
+          .patch(`/tasks/${text.id}/`, { title, description })
           .then((response) => {
             // Chequeamos que la información llegue desde el back-end
             console.log(response.data);
