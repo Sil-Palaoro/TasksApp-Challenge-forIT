@@ -47,7 +47,7 @@ function Registro() {
           setPassword2("");
 
           // Redirige a la página de Inicio de sesión
-          window.location.href = "/app-tareas/iniciar_sesion"; }
+          window.location.href = "/iniciar_sesion"; }
     } catch (error) {
       if (error.response) {
         setErrorMessage(error.response.data.detail || "Error en el registro.");

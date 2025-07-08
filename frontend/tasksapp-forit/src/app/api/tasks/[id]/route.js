@@ -1,27 +1,86 @@
+import prisma from '@/lib/prisma';
+import { verifyJWT } from '@/lib/jwt';
+
+
 export async function PUT(request, { params }) {
-  const id = parseInt(params.id);
-  const index = tasks.findIndex(t => t.id === id);
-  if (index === -1) {
-    return new Response(JSON.stringify({ error: 'Tarea no encontrada' }), {
-      status: 404,
+  // Obtener el token de autorización del encabezado 
+  const authHeader = request.headers.get('authorization');
+  const token = authHeader?.split(' ')[1];
+
+  // Verificar el token JWT 
+  const payload = await verifyJWT(token);
+  if (!payload) {
+    return new Response(JSON.stringify({ error: 'No autorizado'}), {
+      status: 401,
     });
   }
 
-  const data = await request.json();
-  tasks[index] = { ...tasks[index], ...data };
+  // Obtener el usuario autenticado
+  const user = await prisma.user.findUnique({
+    where: { username: payload.username },
+  });
+  
+  if (!user) return new Response(JSON.stringify({ error: 'Usuario no encontrado' }), {
+    status: 404,
+  });
 
-  return Response.json(tasks[index]);
+  const taskId = parseInt(params.id);
+  const data = await request.json();
+
+  //Obtener la tarea por ID
+  const task = await prisma.task.findUnique({
+    where: { id: taskId },
+  });
+
+  // Verificar si la tarea existe y si pertenece al usuario autenticado 
+  if (!task || task.userId !== user.id) {
+    return new Response("No autorizado para modificar esta tarea", { status: 403 });
+  }
+
+  const updatedTask = await prisma.task.update({
+    where: { id: taskId },
+    data: {
+      title: data.title,
+      description: data.description,
+      completed: data.completed,
+    },
+  });
+
+
+  return Response.json(updatedTask);
 }
 
-export async function DELETE(_, { params }) {
-  const id = parseInt(params.id);
-  const index = tasks.findIndex(t => t.id === id);
-  if (index === -1) {
-    return new Response(JSON.stringify({ error: 'Tarea no encontrada' }), {
-      status: 404,
-    });
+export async function DELETE(request, { params }) {
+  const authHeader = request.headers.get('authorization');
+  const token = authHeader?.split(' ')[1];
+
+  //Verifica que el token JWT sea válido 
+  const payload = await verifyJWT(token);
+  if (!payload) return new Response('No autorizado', { status: 401 });
+
+  // Obtener el usuario autenticado 
+  const user = await prisma.user.findUnique({
+    where: { username: payload.username },
+  });
+  
+  if (!user) return new Response('Usuario no encontrado', { status: 404 });
+
+
+  const taskId = parseInt(params.id);
+
+  //Obtener la tarea del usuario autenticado 
+  const task = await prisma.task.findUnique({
+    where: { id: taskId },
+  });
+
+  if (!task || task.userId !== user.id) {
+    return new Response('No autorizado para eliminar esta tarea', { status: 403 });
   }
 
-  const deleted = tasks.splice(index, 1)[0];
-  return Response.json(deleted);
+  await prisma.task.delete({
+    where: { id: taskId }, 
+  });
+
+
+  return new Response(null, { status: 204});
 }

@@ -30,7 +30,7 @@ function Inicio_sesion() {
         localStorage.setItem('access_token', access_token);        
 
         // Redirige al usuario a la página de tareas
-      window.location.href = "/app-tareas/tareas/";
+      window.location.href = "/tareas/";
 
       //Si la solicitud no fue exitosa da un mensaje de error
       } else {
@@ -48,7 +48,7 @@ function Inicio_sesion() {
   return (
     //Formulario de inicio de sesión
     <>
-      <body className={styles.container}>      
+      <div className={styles.container}>      
       <br /><br /><br />
       <div className={styles.contenedor}>
         <h1>Iniciar sesión</h1>
@@ -84,7 +84,7 @@ function Inicio_sesion() {
          
         </div>
       </div>
-      </body>
+      </div>
     </>
   );
 }

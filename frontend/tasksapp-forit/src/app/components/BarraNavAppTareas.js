@@ -28,16 +28,16 @@ function BarraNavAppTareas () {
         className="navigation-menu">
         <ul>
           <li>
-          {pathname !== '/app-tareas' ? (<Link href="/app-tareas">Home</Link>) : null}
+          {pathname !== '/' ? (<Link href="/">Home</Link>) : null}
           </li>          
           <li>
-          {pathname !== '/app-tareas/iniciar_sesion' && pathname !== '/app-tareas/tareas'  ? (<Link href="/app-tareas/iniciar_sesion">Iniciar sesión</Link>) : null}
+          {pathname !== '/iniciar_sesion' && pathname !== '/tareas'  ? (<Link href="/iniciar_sesion">Iniciar sesión</Link>) : null}
           </li>
           <li>
-          {pathname !== '/app-tareas/registro' && pathname !== '/app-tareas/tareas' ? (<Link href="/app-tareas/registro">Registrarse</Link>) : null}
+          {pathname !== '/registro' && pathname !== '/tareas' ? (<Link href="/registro">Registrarse</Link>) : null}
           </li>
           <li>
-          {pathname !== '/app-tareas' && pathname !== '/app-tareas/registro' && pathname !== '/app-tareas/iniciar_sesion' ? (<Link href="/app-tareas/cerrar-sesion">Cerrar sesión</Link>) : null}
+          {pathname !== '/' && pathname !== '/registro' && pathname !== '/iniciar_sesion' ? (<Link href="/cerrar-sesion">Cerrar sesión</Link>) : null}
           </li>
          </ul>
       </div>

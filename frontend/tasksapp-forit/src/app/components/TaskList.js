@@ -45,7 +45,7 @@ function TaskList() {
 
     } else {
       //Si el token JWT no está presente en localStorage, redirige a la página de inicio de sesión
-      router.push('/app-tareas/iniciar_sesion'); 
+      router.push('/iniciar_sesion'); 
     }
   }, []);  
   
@@ -86,7 +86,7 @@ function TaskList() {
         })
             .catch((error) => console.error(error));
     } else {
-        router.push('/app-tareas/iniciar_sesion');
+        router.push('/iniciar_sesion');
     }
 };
 

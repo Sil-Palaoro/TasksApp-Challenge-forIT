@@ -10,7 +10,7 @@ const LogOut = () => {
     localStorage.removeItem('access_token'); 
 
     // Redirige al usuario a la página de inicio
-    router.push('../app-tareas/iniciar_sesion'); 
+    router.push('../iniciar_sesion'); 
   }, []);
 
   return <h1>Cerrando sesión..</h1>;
