@@ -60,35 +60,27 @@ cd frontend/tasksapp-forit
 
 Instalá las dependencias:
 
-bash
-Copiar
-Editar
 npm install
+
+
 Configurá las variables de entorno en un archivo .env:
 
-env
-Copiar
-Editar
 DATABASE_URL="file:./dev.db"
 JWT_SECRET=clave-secreta
+
+
 Generá el cliente Prisma y la base de datos:
-
-bash
-Copiar
-Editar
 npx prisma migrate dev --name init
-Iniciá el servidor de desarrollo:
 
-bash
-Copiar
-Editar
+
+Iniciá el servidor de desarrollo:
 npm run dev
+
+
 Accedé a la app en: http://localhost:3000
 
 📂 Estructura del proyecto
-bash
-Copiar
-Editar
+
 /app
   /api
     /register          → Registro de usuarios
@@ -112,11 +104,8 @@ Este proyecto fue desarrollado íntegramente en Next.js 15, utilizando las nueva
 
 Todo el flujo de autenticación, manejo de tareas y rutas protegidas fue implementado manualmente para demostrar conocimientos de backend, relaciones en base de datos y uso de JWT.
 
-🔐 Usuario demo (si querés agregar):
+🔐 Usuario demo:
 
-txt
-Copiar
-Editar
 usuario: demo
 contraseña: Pass1234
 

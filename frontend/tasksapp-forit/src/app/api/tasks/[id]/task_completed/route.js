@@ -1,8 +1,9 @@
 import prisma from '@/lib/prisma';
 import { verifyJWT } from '@/lib/jwt';
 
-export async function POST(request, context) {
+export async function POST(request, { params }) {
   try {
+    const { id } = await params; 
     const token = request.headers.get('authorization')?.split(' ')[1];
     const payload = await verifyJWT(token);
     if (!payload) return new Response('No autorizado', { status: 401 });
@@ -11,8 +12,7 @@ export async function POST(request, context) {
       where: { username: payload.username },
     });
 
-    const { params } = await context;
-    const taskId = parseInt(params.id);
+    const taskId = parseInt(id);
 
     // Buscar la tarea para asegurarse de que pertenece al usuario
     const task = await prisma.task.findUnique({

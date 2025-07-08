@@ -76,9 +76,9 @@ function TaskItem({ text, taskCompleted, delTask, editTask }) {
         },
       });
 
-      //Marca la tarea como completada o no en la BD con PATCH
+      //Marca la tarea como completada o no en la BD con POST
       axiosInstance
-        .patch(`/tasks/${text.id}/`)
+        .post(`/tasks/${text.id}/task_completed/`)
         .then((response) => {
           
           // Llama a la función taskCompleted para marcar la tarea como completada o no

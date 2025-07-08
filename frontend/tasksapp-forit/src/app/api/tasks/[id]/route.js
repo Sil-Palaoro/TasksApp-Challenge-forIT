@@ -24,8 +24,7 @@ export async function PUT(request, context) {
     status: 404,
   });
 
-  const { params } = await context;
-  const taskId = parseInt(params.id);
+  const taskId = parseInt(context.params.id);
   
   const data = await request.json();
 
@@ -75,8 +74,7 @@ export async function PATCH(request, context) {
     status: 404,
   });
 
-  const { params } = await context;
-  const taskId = parseInt(params.id);
+  const taskId = parseInt(context.params.id);
   
   const updates = await request.json();
 
@@ -120,8 +118,7 @@ export async function DELETE(request, context) {
   if (!user) return new Response('Usuario no encontrado', { status: 404 });
 
 
-  const { params } = await context;
-  const taskId = parseInt(params.id);
+  const taskId = parseInt(context.params.id);
 
   //Obtener la tarea del usuario autenticado 
   const task = await prisma.task.findUnique({
