@@ -2,7 +2,8 @@ import prisma from '@/lib/prisma';
 import { verifyJWT } from '@/lib/jwt';
 
 
-export async function PUT(request, context) {
+export async function PUT(request, { params }) {
+  const { id } = await params;
   // Obtener el token de autorización del encabezado 
   const authHeader = request.headers.get('authorization');
   const token = authHeader?.split(' ')[1];
@@ -24,7 +25,7 @@ export async function PUT(request, context) {
     status: 404,
   });
 
-  const taskId = parseInt(context.params.id);
+  const taskId = parseInt(id);
   
   const data = await request.json();
 
@@ -51,8 +52,8 @@ export async function PUT(request, context) {
   return Response.json(updatedTask);
 }
 
-export async function PATCH(request, context) { 
-  
+export async function PATCH(request, { params }) { 
+  const { id } = await params;
   // Obtener el token de autorización del encabezado 
   const authHeader = request.headers.get('authorization');
   const token = authHeader?.split(' ')[1];
@@ -74,7 +75,7 @@ export async function PATCH(request, context) {
     status: 404,
   });
 
-  const taskId = parseInt(context.params.id);
+  const taskId = parseInt(id);
   
   const updates = await request.json();
 
@@ -102,7 +103,8 @@ export async function PATCH(request, context) {
   return Response.json(updatedTask);
 }
 
-export async function DELETE(request, context) {
+export async function DELETE(request, { params}) {
+  const { id } = await params;
   const authHeader = request.headers.get('authorization');
   const token = authHeader?.split(' ')[1];
 
@@ -118,7 +120,7 @@ export async function DELETE(request, context) {
   if (!user) return new Response('Usuario no encontrado', { status: 404 });
 
 
-  const taskId = parseInt(context.params.id);
+  const taskId = parseInt(id);
 
   //Obtener la tarea del usuario autenticado 
   const task = await prisma.task.findUnique({

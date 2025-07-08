@@ -58,18 +58,22 @@ git clone https://github.com/Sil-Palaoro/TasksApp-Challenge-forIT.git
 cd frontend/tasksapp-forit
 
 
-Instalá las dependencias:
+2. Instalá las dependencias:
 
+```bash
 npm install
+```
 
 
-Configurá las variables de entorno en un archivo .env:
+3. Configurá las variables de entorno en un archivo .env:
 
+```bash
 DATABASE_URL="file:./dev.db"
 JWT_SECRET=clave-secreta
+´´´
 
-
-Generá el cliente Prisma y la base de datos:
+4. Generá el cliente Prisma y la base de datos:
+```bash
 npx prisma migrate dev --name init
 
 
