@@ -1,40 +1,128 @@
-# TasksApp-Challenge-forIT
-Challenge para Academia forIT
+# ✅ TasksApp - Challenge ForIT 2025
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Aplicación de lista de tareas desarrollada como parte del challenge técnico de ingreso a la Academia ForIT 2025.
 
-## Getting Started
+## 🧩 Tecnologías utilizadas
 
-First, run the development server:
+- **Frontend**: Next.js 15 + Tailwind CSS
+- **Backend**: API Routes de Next.js
+- **Base de datos**: SQLite
+- **ORM**: Prisma
+- **Autenticación**: JSON Web Tokens (JWT)
+- **Estilos**: Tailwind CSS
+- **Icons**: react-icons
+
+---
+
+## 🖼️ Capturas de pantalla
+
+> - Registro e inicio de sesión
+> - Vista de tareas
+> - Formulario de edición
+> - Funciones de búsqueda y filtros
+
+---
+
+## 🚀 ¿Qué se puede hacer?
+
+La app permite a cada usuario gestionar sus propias tareas personales. Entre las funcionalidades básicas se incluyen:
+
+- Crear nuevas tareas
+- Editar tareas existentes
+- Eliminar tareas
+- Marcar tareas como completadas o no completadas
+- Ver tareas filtradas por estado
+- Iniciar sesión y ver solo tus propias tareas (autenticación con JWT)
+
+---
+
+## 🆚 Mejoras respecto a la versión básica del challenge
+
+Además de cumplir con todos los requisitos mínimos, esta versión incluye:
+
+- 🔍 **Barra de búsqueda** para filtrar tareas por título o descripción
+- 🟢 **Filtro por estado**: ver solo tareas completadas, no completadas o todas
+- 🔐 **Rutas protegidas en el backend** usando tokens JWT y verificación de identidad por usuario
+- 🛠️ **Base de datos persistente** utilizando SQLite + Prisma ORM
+
+Estas funcionalidades agregan una capa de realismo y escalabilidad, permitiendo extender la app fácilmente a producción con cualquier otro motor de base de datos.
+
+---
+
+## ⚙️ Cómo correr el proyecto localmente
+
+1. Cloná este repositorio:
 
 ```bash
+git clone https://github.com/Sil-Palaoro/TasksApp-Challenge-forIT.git
+cd frontend/tasksapp-forit
+
+
+Instalá las dependencias:
+
+bash
+Copiar
+Editar
+npm install
+Configurá las variables de entorno en un archivo .env:
+
+env
+Copiar
+Editar
+DATABASE_URL="file:./dev.db"
+JWT_SECRET=clave-secreta
+Generá el cliente Prisma y la base de datos:
+
+bash
+Copiar
+Editar
+npx prisma migrate dev --name init
+Iniciá el servidor de desarrollo:
+
+bash
+Copiar
+Editar
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Accedé a la app en: http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+📂 Estructura del proyecto
+bash
+Copiar
+Editar
+/app
+  /api
+    /register          → Registro de usuarios
+    /login             → Inicio de sesión con JWT
+    /tasks             → Endpoints CRUD de tareas
+      /[id]            → PUT, DELETE por ID
+      /[id]/task_completed → POST para marcar completada
+  /tareas              → Página principal de tareas (protegida)
+  /iniciar_sesion      → Formulario login
+  /registro            → Formulario de registro
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+/lib
+  prisma.js            → Cliente de Prisma
+  jwt.js               → Funciones JWT
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+/prisma
+  schema.prisma        → Modelos de User y Task
 
-## Learn More
+📌 Consideraciones finales
+Este proyecto fue desarrollado íntegramente en Next.js 15, utilizando las nuevas App Routes (app/api) para gestionar el backend. Se utilizó Prisma como ORM y SQLite como base de datos ligera y local, ideal para pruebas o prototipos.
 
-To learn more about Next.js, take a look at the following resources:
+Todo el flujo de autenticación, manejo de tareas y rutas protegidas fue implementado manualmente para demostrar conocimientos de backend, relaciones en base de datos y uso de JWT.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🔐 Usuario demo (si querés agregar):
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+txt
+Copiar
+Editar
+usuario: demo
+contraseña: Pass1234
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+📫 Si querés hacerme llegar feedback, estoy en LinkedIn o por GitHub 😄
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+https://github.com/Sil-Palaoro
 
+https://www.linkedin.com/in/silvina-palaoro
