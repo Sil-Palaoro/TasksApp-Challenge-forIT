@@ -4,12 +4,12 @@ Aplicación de lista de tareas desarrollada como parte del challenge técnico de
 
 ## 🧩 Tecnologías utilizadas
 
-- **Frontend**: Next.js 15 + Tailwind CSS
+- **Frontend**: Next.js 15 + CSS
 - **Backend**: API Routes de Next.js
 - **Base de datos**: SQLite
 - **ORM**: Prisma
 - **Autenticación**: JSON Web Tokens (JWT)
-- **Estilos**: Tailwind CSS
+- **Estilos**: CSS
 - **Icons**: react-icons
 
 ---
@@ -40,8 +40,8 @@ La app permite a cada usuario gestionar sus propias tareas personales. Entre las
 
 Además de cumplir con todos los requisitos mínimos, esta versión incluye:
 
-- 🔍 **Barra de búsqueda** para filtrar tareas por título o descripción
-- 🟢 **Filtro por estado**: ver solo tareas completadas, no completadas o todas
+- 🔍 **Barra de búsqueda** para filtrar tareas por título
+- 🟢 **Filtro por estado**: ver solo tareas completadas, pendientes o todas
 - 🔐 **Rutas protegidas en el backend** usando tokens JWT y verificación de identidad por usuario
 - 🛠️ **Base de datos persistente** utilizando SQLite + Prisma ORM
 
@@ -56,6 +56,7 @@ Estas funcionalidades agregan una capa de realismo y escalabilidad, permitiendo 
 ```bash
 git clone https://github.com/Sil-Palaoro/TasksApp-Challenge-forIT.git
 cd frontend/tasksapp-forit
+```
 
 
 2. Instalá las dependencias:
@@ -70,21 +71,27 @@ npm install
 ```bash
 DATABASE_URL="file:./dev.db"
 JWT_SECRET=clave-secreta
-´´´
+```
+
 
 4. Generá el cliente Prisma y la base de datos:
 ```bash
 npx prisma migrate dev --name init
+```
 
 
 Iniciá el servidor de desarrollo:
+```bash
 npm run dev
+```
 
 
 Accedé a la app en: http://localhost:3000
 
+
 📂 Estructura del proyecto
 
+```bash
 /app
   /api
     /register          → Registro de usuarios
@@ -103,6 +110,8 @@ Accedé a la app en: http://localhost:3000
 /prisma
   schema.prisma        → Modelos de User y Task
 
+```
+
 📌 Consideraciones finales
 Este proyecto fue desarrollado íntegramente en Next.js 15, utilizando las nuevas App Routes (app/api) para gestionar el backend. Se utilizó Prisma como ORM y SQLite como base de datos ligera y local, ideal para pruebas o prototipos.
 
@@ -110,8 +119,10 @@ Todo el flujo de autenticación, manejo de tareas y rutas protegidas fue impleme
 
 🔐 Usuario demo:
 
+```bash
 usuario: demo
 contraseña: Pass1234
+```
 
 
 📫 Si querés hacerme llegar feedback, estoy en LinkedIn o por GitHub 😄
