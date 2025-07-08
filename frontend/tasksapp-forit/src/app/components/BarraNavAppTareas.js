@@ -1,5 +1,5 @@
 //Componente de la Barra de navegación
-"use client"
+"use client";
 import Link from 'next/link';
 import "@/styles/navbar.css";
 import { useState, useEffect } from 'react';

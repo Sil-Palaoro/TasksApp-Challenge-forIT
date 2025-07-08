@@ -1,5 +1,3 @@
-//Componente de la Lista de tareas
-
 "use client";
 import TaskForm from "./TaskForm";
 import TaskItem from "./TaskItem";

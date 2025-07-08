@@ -1,5 +1,5 @@
 //Componente del boton para volver atrás en el historial de navegación
-'use client' 
+'use client';
 import { useRouter } from 'next/navigation';
 import styles from "@/styles/page.module.css";
 

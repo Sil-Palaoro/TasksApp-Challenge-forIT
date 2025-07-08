@@ -1,5 +1,5 @@
 //Componente Footer con  boton "Volver atras", excepto en el Home
-"use client"
+"use client";
 import { useState, useEffect } from 'react';
 import Atras from "./Atras.js";
 import styles from "@/styles/page.module.css";

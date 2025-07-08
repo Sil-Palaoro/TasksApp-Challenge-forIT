@@ -1,5 +1,5 @@
 //Componente del formulario para armar cada tarea
-"use client"
+"use client";
 import {useEffect, useState}  from "react";
 import styles from '@/styles/TaskForm.module.css';
 import { useRouter } from 'next/navigation';

@@ -4,12 +4,12 @@ import styles from "@/styles/page.module.css";
 const CerrarSesion = () => {
   return (
     <>
-      <body className={styles.container}>  
+      <div className={styles.container}>  
         <br /><br /> <br /> 
         <div className={styles.contenedor}>             
           <LogOut />  
         </div>
-      </body>  
+      </div>  
     </>
   );
 };

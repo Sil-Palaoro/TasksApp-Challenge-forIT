@@ -1,5 +1,4 @@
-//Componente de cada Tarea
-
+'use client';
 import React from "react";
 import { AiFillEdit } from "react-icons/ai";
 import { BsFillTrash2Fill } from "react-icons/bs";

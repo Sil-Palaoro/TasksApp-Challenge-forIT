@@ -11,7 +11,7 @@ export const metadata = {
   description: "Tu organizador personal",
 };
 
-export default function LayoutTareas({ children }) {
+export default function RootLayout({ children }) {
   return (
     <>
       <Head>
