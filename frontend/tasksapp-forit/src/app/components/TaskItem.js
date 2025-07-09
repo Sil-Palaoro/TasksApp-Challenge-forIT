@@ -64,30 +64,9 @@ function TaskItem({ text, taskCompleted, delTask, editTask }) {
     }
   };
   
-  const handleCompleted = (e) => {    
+  const handleCompleted = () => {    
     //Marca la tarea como completada o no
-
-    const access_token = localStorage.getItem('access_token');
-    if (access_token) {
-      const axiosInstance = axios.create({
-        baseURL: "/api/",
-        headers: {
-          Authorization: `Bearer ${access_token}`,
-        },
-      });
-
-      //Marca la tarea como completada o no en la BD con POST
-      axiosInstance
-        .post(`/tasks/${text.id}/task_completed/`)
-        .then((response) => {
-          
-          // Llama a la función taskCompleted para marcar la tarea como completada o no
-          taskCompleted(text.id);
-        })
-        .catch((error) => console.error(error));
-    } else {
-      router.push('/iniciar_sesion');
-    }
+    taskCompleted(text.id);    
   };
   
 
@@ -96,7 +75,7 @@ function TaskItem({ text, taskCompleted, delTask, editTask }) {
     //Botones para marcar la tarea como completada, editarla y eliminarla
      <div className={styles.div}>
         <RiRadioButtonFill
-          onClick={() => handleCompleted(text.id)}
+          onClick={handleCompleted}
           className={
             text.completed ? [styles.RiRadioButtonFillCompleted] : [styles.RiRadioButtonFill]
           }

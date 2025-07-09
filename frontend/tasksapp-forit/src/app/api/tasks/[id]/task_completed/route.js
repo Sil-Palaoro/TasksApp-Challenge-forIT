@@ -19,8 +19,12 @@ export async function POST(request, { params }) {
       where: { id: taskId },
     });
 
-    if (!task || task.userId !== user.id) {
-      return new Response('No autorizado', { status: 403 });
+    if (!task) {
+      return new Response('No se encontró la tarea', { status: 403 });
+    }
+
+    if (task.userId !== user.id) {
+      return new Response('El usuario no está autorizado', { status: 403 });
     }
 
     // Invertir el valor de completed
