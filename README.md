@@ -129,25 +129,25 @@ Todo el flujo de autenticación, manejo de tareas y rutas protegidas fue impleme
 
 ### 🔐 Registro e inicio de sesión
 
-![Validaciones formulario de registro - 1](./public/screenshots/validaciones-formulario.png)
+![Validaciones formulario de registro - 1](TasksApp-Challenge-ForIT/tasksapp-forit/public/screenshots/validaciones-formulario.png)
 
-![Validaciones formulario de registro - 2](./public/screenshots/validaciones-formulario-2.png)
+![Validaciones formulario de registro - 2](TasksApp-Challenge-ForIT/tasksapp-forit/public/screenshots/validaciones-formulario-2.png)
 
-![Registro exitoso](./public/screenshots/registro.png)
+![Registro exitoso](TasksApp-Challenge-ForIT/tasksapp-forit/public/screenshots/registro.png)
 
 
-![Login](./public/screenshots/login.png)
+![Login](TasksApp-Challenge-ForIT/tasksapp-forit/public/screenshots/login.png)
 
 
 ---
 
 ### 🗑️ Nueva tarea
 
-![Dashboard vacío](./public/screenshots/dashboard-vacio.png)
+![Dashboard vacío](TasksApp-Challenge-ForIT/tasksapp-forit/public/screenshots/dashboard-vacio.png)
 
-![Agregar tareas - formulario](./public/screenshots/nueva-tarea.png)
+![Agregar tareas - formulario](TasksApp-Challenge-ForIT/tasksapp-forit/public/screenshots/nueva-tarea.png)
 
-![Agregar tareas - vista](./public/screenshots/nueva-tarea-2.png)
+![Agregar tareas - vista](TasksApp-Challenge-ForIT/tasksapp-forit/public/screenshots/nueva-tarea-2.png)
 
 
 ---
@@ -155,45 +155,46 @@ Todo el flujo de autenticación, manejo de tareas y rutas protegidas fue impleme
 ### 📋 Vista de tareas
 
 
-![Vista de tareas](./public/screenshots/vista-tareas.png)
+![Vista de tareas](TasksApp-Challenge-ForIT/tasksapp-forit/public/screenshots/vista-tareas.png)
 
-![Tareas de otro usuario](./public/screenshots/tareas-de-otro-usuario.png)
+![Tareas de otro usuario](TasksApp-Challenge-ForIT/tasksapp-forit/public/screenshots/tareas-de-otro-usuario.png)
 
 ---
 
 ### 📝 Tareas editables
 
-![Tarea editable - 1](./public/screenshots/tarea-editable.png)
+![Tarea editable - 1](TasksApp-Challenge-ForIT/tasksapp-forit/public/screenshots/tarea-editable.png)
 
-![Tarea editable - 2](./public/screenshots/tarea-editable-2.png)
+![Tarea editable - 2](TasksApp-Challenge-ForIT/tasksapp-forit/public/screenshots/tarea-editable-2.png)
 
 ---
 
 ### 🗑️ Eliminación de tareas
 
-![Eliminación de tareas](./public/screenshots/eliminacion-tareas.png)
+![Eliminación de tareas](TasksApp-Challenge-ForIT/tasksapp-forit/public/screenshots/eliminacion-tareas.png)
 
 
 ---
 
 ### ✅ Marcar tareas como completadas
 
-![Tarea completada](./public/screenshots/tarea-completada.png)
+![Tarea completada](TasksApp-Challenge-ForIT/tasksapp-forit/public/screenshots/tarea-completada.png)
 
 
 ---
 
 ### 🔍 Funciones de búsqueda y filtros
 
-![Búsqueda de una tarea por su título](./public/screenshots/busqueda.png)
+![Búsqueda de una tarea por su título](TasksApp-Challenge-ForIT/tasksapp-forit/public/screenshots/busqueda.png)
 
-![Filtros](./public/screenshots/filtros-busqueda.png)
+![Filtros](TasksApp-Challenge-ForIT/tasksapp-forit/public/screenshots/filtros-busqueda.png)
 
-![Filtro - tareas pendientes](./public/screenshots/filtros-pendientes.png)
+![Filtro - tareas pendientes](TasksApp-Challenge-ForIT/tasksapp-forit/public/screenshots/filtros-pendientes.png)
 
-![Filtro - tareas realizadas](./public/screenshots/filtros-realizadas.png)
+![Filtro - tareas realizadas](TasksApp-Challenge-ForIT/tasksapp-forit/public/screenshots/filtros-realizadas.png)
 
 
+---
 
 
 
