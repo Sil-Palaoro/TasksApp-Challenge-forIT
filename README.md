@@ -12,14 +12,6 @@ Aplicación de lista de tareas desarrollada como parte del challenge técnico de
 - **Estilos**: CSS
 - **Icons**: react-icons
 
----
-
-## 🖼️ Capturas de pantalla
-
-> - Registro e inicio de sesión
-> - Vista de tareas
-> - Formulario de edición
-> - Funciones de búsqueda y filtros
 
 ---
 
@@ -27,12 +19,15 @@ Aplicación de lista de tareas desarrollada como parte del challenge técnico de
 
 La app permite a cada usuario gestionar sus propias tareas personales. Entre las funcionalidades básicas se incluyen:
 
+- Registrar usuarios, con formularios con validaciones
+- Iniciar sesión y ver solo tus propias tareas (autenticación con JWT) 
 - Crear nuevas tareas
 - Editar tareas existentes
 - Eliminar tareas
 - Marcar tareas como completadas o no completadas
+- Buscar tareas por su título
 - Ver tareas filtradas por estado
-- Iniciar sesión y ver solo tus propias tareas (autenticación con JWT)
+- Cerrar sesión
 
 ---
 
@@ -100,8 +95,11 @@ Accedé a la app en: http://localhost:3000
       /[id]            → PUT, DELETE por ID
       /[id]/task_completed → POST para marcar completada
   /tareas              → Página principal de tareas (protegida)
-  /iniciar_sesion      → Formulario login
-  /registro            → Formulario de registro
+  /iniciar_sesion      → Pagina login
+  /cerrar_sesion       → Pagina con logica de cierre de sesión
+  /registro            → Pagina de registro
+  /components          → Componentes de la app
+
 
 /lib
   prisma.js            → Cliente de Prisma
@@ -113,16 +111,90 @@ Accedé a la app en: http://localhost:3000
 ```
 
 📌 Consideraciones finales
+
 Este proyecto fue desarrollado íntegramente en Next.js 15, utilizando las nuevas App Routes (app/api) para gestionar el backend. Se utilizó Prisma como ORM y SQLite como base de datos ligera y local, ideal para pruebas o prototipos.
 
 Todo el flujo de autenticación, manejo de tareas y rutas protegidas fue implementado manualmente para demostrar conocimientos de backend, relaciones en base de datos y uso de JWT.
 
-🔐 Usuario demo:
 
-```bash
-usuario: demo
-contraseña: Pass1234
-```
+---
+
+## 📸 Capturas de pantalla
+
+### 🏠 Home
+
+![Home](./public/screenshots/home.jpg)
+
+---
+
+### 🔐 Registro e inicio de sesión
+
+![Validaciones formulario de registro - 1](./public/screenshots/validaciones-formulario.png)
+
+![Validaciones formulario de registro - 2](./public/screenshots/validaciones-formulario-2.png)
+
+![Registro exitoso](./public/screenshots/registro.png)
+
+
+![Login](./public/screenshots/login.png)
+
+
+---
+
+### 🗑️ Nueva tarea
+
+![Dashboard vacío](./public/screenshots/dashboard-vacio.png)
+
+![Agregar tareas - formulario](./public/screenshots/nueva-tarea.png)
+
+![Agregar tareas - vista](./public/screenshots/nueva-tarea-2.png)
+
+
+---
+
+### 📋 Vista de tareas
+
+
+![Vista de tareas](./public/screenshots/vista-tareas.png)
+
+![Tareas de otro usuario](./public/screenshots/tareas-de-otro-usuario.png)
+
+---
+
+### 📝 Tareas editables
+
+![Tarea editable - 1](./public/screenshots/tarea-editable.png)
+
+![Tarea editable - 2](./public/screenshots/tarea-editable-2.png)
+
+---
+
+### 🗑️ Eliminación de tareas
+
+![Eliminación de tareas](./public/screenshots/eliminacion-tareas.png)
+
+
+---
+
+### ✅ Marcar tareas como completadas
+
+![Tarea completada](./public/screenshots/tarea-completada.png)
+
+
+---
+
+### 🔍 Funciones de búsqueda y filtros
+
+![Búsqueda de una tarea por su título](./public/screenshots/busqueda.png)
+
+![Filtros](./public/screenshots/filtros-busqueda.png)
+
+![Filtro - tareas pendientes](./public/screenshots/filtros-pendientes.png)
+
+![Filtro - tareas realizadas](./public/screenshots/filtros-realizadas.png)
+
+
+
 
 
 📫 Si querés hacerme llegar feedback, estoy en LinkedIn o por GitHub 😄
