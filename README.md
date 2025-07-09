@@ -50,7 +50,7 @@ Estas funcionalidades agregan una capa de realismo y escalabilidad, permitiendo 
 
 ```bash
 git clone https://github.com/Sil-Palaoro/TasksApp-Challenge-forIT.git
-cd frontend/tasksapp-forit
+cd TasksApp-Challenge-ForIT/tasksapp-forit
 ```
 
 
@@ -123,7 +123,7 @@ Todo el flujo de autenticación, manejo de tareas y rutas protegidas fue impleme
 
 ### 🏠 Home
 
-![Home](./public/screenshots/home.jpg)
+![Home](TasksApp-Challenge-ForIT/tasksapp-forit/public/screenshots/home.jpg)
 
 ---
 
