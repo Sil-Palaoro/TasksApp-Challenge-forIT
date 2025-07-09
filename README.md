@@ -147,7 +147,7 @@ Todo el flujo de autenticación, manejo de tareas y rutas protegidas fue impleme
 
 ![Agregar tareas - formulario](TasksApp-Challenge-ForIT/tasksapp-forit/public/screenshots/nueva-tarea.png)
 
-![Agregar tareas - vista](TasksApp-Challenge-ForIT/tasksapp-forit/public/screenshots/nueva-tarea-2.png)
+![Agregar tareas - vista](TasksApp-Challenge-ForIT/tasksapp-forit/public/screenshots/nueva-tarea-lista.png)
 
 
 ---
@@ -187,7 +187,7 @@ Todo el flujo de autenticación, manejo de tareas y rutas protegidas fue impleme
 
 ![Búsqueda de una tarea por su título](TasksApp-Challenge-ForIT/tasksapp-forit/public/screenshots/busqueda.png)
 
-![Filtros](TasksApp-Challenge-ForIT/tasksapp-forit/public/screenshots/filtros-busqueda.png)
+![Filtros](TasksApp-Challenge-ForIT/tasksapp-forit/public/screenshots/filtros.png)
 
 ![Filtro - tareas pendientes](TasksApp-Challenge-ForIT/tasksapp-forit/public/screenshots/filtros-pendientes.png)
 
